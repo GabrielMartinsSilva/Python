@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+def lista_de_pessoas(request):
+    return render(request, 'pessoa.html')
+
