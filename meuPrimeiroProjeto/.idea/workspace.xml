@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b8231f3-da24-48ad-81e2-00402f5bf0d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/arquivosEstaticos/estilo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientes/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/clientes/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meuPrimeiroProjeto/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/meuPrimeiroProjeto/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meusTemplates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/meusTemplates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meuPrimeiroProjeto/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/meuPrimeiroProjeto/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,8 +30,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/meuPrimeiroProjeto/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1968">
-              <caret line="123" column="24" selection-start-line="123" selection-start-column="24" selection-end-line="123" selection-end-column="24" />
+            <state relative-caret-position="1643">
+              <caret line="126" column="20" selection-start-line="126" selection-start-column="20" selection-end-line="126" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/clientes/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/meuPrimeiroProjeto/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+              <folding>
+                <element signature="e#642#674#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -40,12 +61,12 @@
         <entry file="file://$PROJECT_DIR$/arquivosEstaticos/estilo.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="16">
-              <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+              <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/meusTemplates/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="224">
@@ -63,9 +84,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/meuPrimeiroProjeto/views.py" />
-        <option value="$PROJECT_DIR$/meuPrimeiroProjeto/settings.py" />
         <option value="$PROJECT_DIR$/arquivosEstaticos/estilo.css" />
         <option value="$PROJECT_DIR$/meusTemplates/index.html" />
+        <option value="$PROJECT_DIR$/clientes/models.py" />
+        <option value="$PROJECT_DIR$/meuPrimeiroProjeto/settings.py" />
+        <option value="$PROJECT_DIR$/meuPrimeiroProjeto/urls.py" />
       </list>
     </option>
   </component>
@@ -88,11 +111,6 @@
             <path>
               <item name="meuPrimeiroProjeto" type="b2602c69:ProjectViewProjectNode" />
               <item name="meuPrimeiroProjeto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="meuPrimeiroProjeto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="meuPrimeiroProjeto" type="462c0819:PsiDirectoryNode" />
-              <item name="arquivosEstaticos" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="meuPrimeiroProjeto" type="b2602c69:ProjectViewProjectNode" />
@@ -172,17 +190,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meuPrimeiroProjeto/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1968">
-          <caret line="123" column="24" selection-start-line="123" selection-start-column="24" selection-end-line="123" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/arquivosEstaticos/estilo.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
-          <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -190,6 +201,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
           <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clientes/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meuPrimeiroProjeto/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1643">
+          <caret line="126" column="20" selection-start-line="126" selection-start-column="20" selection-end-line="126" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meuPrimeiroProjeto/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding>
+            <element signature="e#642#674#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

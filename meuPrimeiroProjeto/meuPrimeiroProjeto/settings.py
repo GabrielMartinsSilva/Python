@@ -124,4 +124,6 @@ STATICFILES_DIRS = [
     'arquivosEstaticos',
 ]
 
+MEDIA_URL = '/media/'
 
+MEDIA_ROOT = 'arquivosMedia'
