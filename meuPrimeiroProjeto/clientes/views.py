@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from .models import Person
 
 def lista_de_pessoas(request):
-    return render(request, 'pessoa.html')
+    persons = Person.objects.all()
+    return render(request, 'person.html', {'persons': persons})
 
