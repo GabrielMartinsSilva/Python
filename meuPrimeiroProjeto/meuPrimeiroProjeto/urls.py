@@ -1,6 +1,3 @@
-
-
-
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
@@ -15,8 +12,8 @@ from clientes import urls as urls_clientes
 urlpatterns = [
     path('hello/', hello),
     path('admin/', admin.site.urls),
-    path('pessoa/', include(urls_clientes)),
+    path('person/', include(urls_clientes)),
     path('articles/<int:year>/', articles),
-    path('nome/<str:nome>/', fname2)
+    path('nome/<str:nome>/', fname2),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
