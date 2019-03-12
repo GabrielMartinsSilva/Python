@@ -8,18 +8,12 @@
     <title>Document</title>
 </head>
 <body>
-    <ul>
-        {% for person in persons %}
-
-            <li>
-                <a href="{% url 'persons_update' person.id %}">{{ person.first_name }}</a>
-                <a href="{% url 'persons_delete' person.id %}">Delete</a>
-            </li>
-
-        {% endfor %}
-    </ul>
-
-    <a href="{% url 'person_new' %}">New</a>
+    <h1>Tem certeza que deseja deletar {{ person.first_name }} ?</h1>
+     <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Delete</button>
+    </form>
 
 </body>
 </html>
