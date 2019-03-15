@@ -9,7 +9,9 @@
 </head>
 <body>
     <ul>
-        <a href="{% url 'logout' %}">Logout</a>
+        <h2>Olá {{user.username}}</h2>
+        <a href="{% url 'logout' %}">Logout</a><br>
+        <a href="{% url 'login' %}">Home</a>
         {% for person in persons %}
 
             <li>

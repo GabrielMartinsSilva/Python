@@ -5,7 +5,7 @@ from .forms import PersonForm
 
 
 @login_required
-def lista_de_pessoas(request):
+def persons_list(request):
     persons = Person.objects.all()
     return render(request, 'person.html', {'persons': persons})
 
@@ -16,7 +16,7 @@ def persons_new(request):
 
     if form.is_valid():
         form.save()
-        return redirect('lista_de_pessoas')
+        return redirect('persons_list')
 
     return render(request, 'form_pessoas.html', {'form': form})
 
@@ -27,7 +27,7 @@ def persons_update(request, id):
 
     if form.is_valid():
         form.save()
-        return redirect('lista_de_pessoas')
+        return redirect('persons_list')
 
     return render(request, 'form_pessoas.html', {'form': form})
 @login_required
@@ -37,7 +37,7 @@ def persons_delete(request, id):
 
     if request.method=='POST':
         person.delete()
-        return redirect('lista_de_pessoas')
+        return redirect('persons_list')
 
     return render(request, 'person_delete_confirm.html', {'person': person})
 

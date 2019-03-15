@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,12 +8,15 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit">Salvar</button>
-    </form>
+    <h1>Seja bem vindo</h1>
 
-    <a href="{% url 'persons_list' %}">List</a>
+    {% if user.is_authenticated %}
+        <p>Ola {{ user.username }}</p>
+        <a href="{% url 'persons_list'%}">List</a><br>
+        <a href="{% url 'login' %}">Logout</a>
+    {% else %}
+        <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+
 </body>
 </html>

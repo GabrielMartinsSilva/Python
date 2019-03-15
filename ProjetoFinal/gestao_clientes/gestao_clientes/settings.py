@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'clientes',
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -76,8 +77,12 @@ WSGI_APPLICATION = 'gestao_clientes.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'gestao_clientes',
+        'USER': 'postgres',
+        'PASSWORD': 'root',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -126,4 +131,6 @@ MEDIA_ROOT = 'arquivosMedia'
 
 LOGIN_URL = '/login'
 
-LOGIN_REDIRECT_URL = 'person_list'
+LOGIN_REDIRECT_URL = 'persons_list'
+
+LOGOUT_REDIRECT_URL = 'persons_list'
