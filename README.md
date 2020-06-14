@@ -1,1 +1,1 @@
-REPOSITÓRIO PARA ESTUDOS PYTHON
+Python studies repository
