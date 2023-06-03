@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Preloader -->
+<div id="preloader">
+   <i class="circle-preloader"></i>
+   <img src="{% static 'img/core-img/pizza.png' %}" alt="">
+</div>
+ 
+{% include 'partials/_busca.html' %}
+ 
+{% include 'partials/_menu.html' %}
+ 
+<!-- ##### Contact Form Area Start ##### -->
+<div class="contact-area section-padding-0-80">
+   <div class="container">
+       <div class="row">
+           <div class="col-12">
+               <div class="section-heading">
+                   <h3>Cadastre sua vaga, {{ user.username }} :)</h3>
+               </div>
+           </div>
+       </div>
+ 
+       <div class="row">
+           <div class="col-12">
+           <p>Todos os campos são obrigatórios</p>
+               <div class="contact-form-area">
+                   <form action="{% url 'cria_receita' %}" method="post" enctype="multipart/form-data">
+                           {% csrf_token %}
+                       <div class="row">
+                           <div class="col-12 col-lg-12">
+                               <label for="titulo_vaga"><b>Título da vaga</b></label>
+                               <input type="text" id="titulo_vaga" class="form-control" name="titulo_vaga" placeholder="Ex. Estágio em desenvolvimento backend" required>
+                           </div>                           
+                           <div class="col-12">
+                               <label for="file"><b>Local da vaga</b></label>
+                               <input type="text" id="localizacao" class="form-control" name="localizacao" placeholder="Ex. Passos-MG, São Paulo - SP" required>
+                           </div>
+                           <div class="col-12">
+                            <label for="file"><b>Descrição da vaga</b></label>
+                            <textarea id = "descricao" class="form-control" name="descricao" cols="30" rows="10" placeholder="Especifique o que procura no candidato, curso que deve estar cursando e se necessário a partir de qual periodo, além de carga horária e beneficios." required></textarea>
+                        </div>  
+                           <div class="col-12 col-lg-12">
+                               <label for="file"><b>Salário</b></label>
+                               <select class="form-control" id ="salario" name = "salario">
+                                <option value="valor1">Até R$ 400</option>
+                                <option value="valor2" >Entre R$400 a R$1000</option>
+                                <option value="valor3">Acima de R$ 1000</option>
+                              </select>                               
+                           </div>                        
+                          
+                           <div class="col-12 text-center">
+                               <button class="btn delicious-btn mt-30" type="submit">Cadastrar vaga</button>
+                           </div>                         
+                       </div>
+                   </form>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+ 
+{% include 'partials/_footer.html' %}
+{% endblock %}

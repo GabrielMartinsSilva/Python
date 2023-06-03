@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %}
+
+{% block title %} Painel do administrador  {% endblock %}
+
+{% block main %}
+
+   <ul>
+        <h2>Olá {{user.username}}</h2>
+        <a href="{% url 'logout' %}">Logout</a><br>
+        <a href="{% url 'login' %}">Home</a>
+        {% for person in persons %}
+
+            <li>
+                <a href="{% url 'persons_update' person.id %}">{{ person.first_name }}</a>
+                <a href="{% url 'persons_delete' person.id %}" class="btn btn-danger">Delete</a>
+            </li>
+
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'person_new' %}" class="btn btn-primary">New</a>
+
+{% endblock %}

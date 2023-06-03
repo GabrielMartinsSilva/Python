@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Preloader -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+        <img src="{% static 'img/core-img/pizza.png' %}" alt="">
+    </div>
+
+    {% include 'partials/_busca.html' %}
+
+    {% include 'partials/_menu.html' %}
+
+    <!-- ##### Best Receipe Area Start ##### -->
+    <section class="best-receipe-area">
+        <div class="container">                                         
+                {% if receitas %}
+                {% for receita in receitas %}
+                 
+                <!-- Single Best Receipe Area -->                                              
+                    <div class="row justify-content-center">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                              <a href="{% url 'receita' receita.id %}">
+                                <h4 class="card-title" style="font-weight: bold;">{{ receita.titulo_vaga }}</h4>
+                              </a>
+                                <h6 class="text-muted card-subtitle mb-2">Cidade {{ receita.localizacao }}</h6>
+                                <h6 class="text-muted card-subtitle mb-2">Postado dia {{ receita.date }}</h6>
+                                <hr/>                                
+                                    <span class="badge badge-pill badge-primary">{{ receita.salario }}</span>                     
+                                                                                                     
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-md-3 d-none d-md-block"><a href="#"><button class="btn btn-primary" type="button" style="height:75px;width:100%;margin-top:25px;background-color:#ffe01b;color:#000;border: 0px solid #000;">Se Inscreva AGORA!</button></a></div>                
+            
+                    </div>                  
+                {% endfor %}                    
+                {% endif %}
+                </div>
+            </div> 
+        </div>     
+    </section>  
+      
+                          
+
+    
+    <!-- ##### Best Receipe Area End ##### -->
+
+     <!-- ##### Pagination ##### -->
+    <section class="top-catagory-area section-padding-20-0">
+        <div class="container">
+            {% if receitas.has_other_pages %}
+            <ul class="pagination">
+                {% if receitas.has.previous %}
+                <li class="page-item">
+                    <a href="?page={{ receitas.previous_page_number }}" class="page-link">&laquo;</a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link">&laquo;</a>
+                </li>
+                {% endif %}
+                {% for pagina in receitas.paginator.page_range %}
+                {% if receitas.number == pagina %}
+                <li class="page-item active">
+                    <a class="page-link">{{ pagina }}</a>
+                </li>
+                {% else %}
+                <li class="page-item">
+                    <a href="?page={{ pagina }}" class="page-link">{{ pagina }}</a>
+                </li>
+                {% endif %}
+                {% endfor %}
+                {% if receitas.has_next %}
+                <li class="page-item">
+                    <a href="?page={{ receitas.next_page_number }}" class="page-link">&raquo;</a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link">&raquo;</a>
+                </li>
+               {% endif %} 
+            </ul>
+            {% endif %}
+        </div>
+    </section>
+    <!-- ##### Pagination End ##### -->
+
+    {% include 'partials/_footer.html' %}
+
+    {% endblock %}

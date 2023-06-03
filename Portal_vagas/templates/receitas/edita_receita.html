@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Preloader -->
+<div id="preloader">
+    <i class="circle-preloader"></i>
+    <img src="{% static 'img/core-img/pizza.png' %}" alt="">
+</div>
+
+{% include 'partials/_busca.html' %}
+
+{% include 'partials/_menu.html' %}
+
+<!-- ##### Contact Form Area Start ##### -->
+<div class="contact-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading">
+                    <h3>Edite aqui a sua vaga, {{ user.username }} :)</h3>
+                </div>
+            </div>
+        </div>
+        {% include 'partials/_alertas.html'%}
+        <div class="row">
+            <div class="col-12">
+            <p>Todos os campos são obrigatórios</p>
+                <div class="contact-form-area">
+                    <form action="{% url 'atualiza_receita' %}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <input type="text" id="receita_id" class="form-control" name="receita_id" value="{{receita.id}}" hidden>
+                        <div class="row">
+                           <div class="col-12 col-lg-12">
+                               <label for="titulo_vaga"><b>Título da vaga</b></label>
+                               <input type="text" id="titulo_vaga" class="form-control" name="titulo_vaga" value="{{receita.titulo_vaga}}" required>
+                           </div>
+                           <div class="col-12">
+                               <label for="file"><b>Local da vaga</b></label>
+                               <textarea class="form-control" name="localizacao" cols="30" rows="10" required>{{receita.localizacao}}</textarea>
+                           </div>
+                           <div class="col-12 col-lg-3">
+                               <label for="file"><b>Descrição da vaga</b></label>
+                               <textarea class="form-control" name="descricao" cols="30" rows="10" required>{{receita.descricao}}</textarea>
+                           </div>
+                           <div class="col-12 col-lg-12">
+                            <label for="file"><b>{{receita.salario}}</b></label>
+                            <select class ="multiselect" name = "salario" id ="salario">
+                             <option value="valor1">Até R$ 400</option>
+                             <option value="valor2">Entre R$400 a R$1000</option>
+                             <option value="valor3">Acima de R$ 1000</option>
+                           </select>                               
+                        </div>               
+                           
+                            <div class="col-12 text-center">
+                                <button class="btn btn-success" type="submit">Atualizar</button>
+                            </div>                                                    
+                       </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'partials/_footer.html' %}
+{% endblock %}

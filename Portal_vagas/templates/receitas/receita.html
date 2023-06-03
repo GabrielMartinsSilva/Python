@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+        <img src="{% static 'img/core-img/hamburger.png' %}" alt="">
+    </div>
+
+    {% include 'partials/_busca.html' %}
+
+    {% include 'partials/_menu.html' %}
+
+       
+        <!-- Receipe Slider -->
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="receipe-slider owl-carousel">
+                        {% if receita.foto_receita == '' %}
+                            <img src="{% static 'img/bg-img/tomate_banner.jpg' %}">
+                        {% else %}  
+                            <img src="{{ receita.foto_receita.url }}" alt="">
+                        {% endif %}   
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Receipe Content Area -->
+        <div class="receipe-content-area">
+            <div class="container ">
+
+                <div class="row ">
+                    <div class="col-12 col-md-8 ">
+                        <div class="receipe-headline my-5">
+                            <span>Postado dia {{ receita.date }}</span>
+                            <h2>{{receita.titulo_vaga}}</h2>
+                            <div class="receipe-duration">
+                                <h6>Vaga : {{receita.titulo_vaga}}</h6>
+                                <h6>Cidade : {{receita.localizacao}}</h6>
+                                <h6>Descrição: {{receita.descricao}}</h6>                                
+                                <h6>Salario : {{receita.salario}}</h6>                                
+                            </div> 
+                            <div class="col-12 text-center">
+                                <button class="btn btn-success" type="submit">Candidatar-se</button>
+                            </div>
+                        </div>
+                    </div>                
+
+    {% include 'partials/_footer.html' %}
+
+
+{% endblock %}        
+
+
+
